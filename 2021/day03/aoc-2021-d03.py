@@ -100,8 +100,7 @@ def vec2int (vec):
 
 
 filename = 'aoc-2021-d03.txt'
-numbers  = list( lines(filename, lambda line: line.strip()) )
-nbits    = len(numbers[0])
+numbers  = list( lines(filename, str2vec) )
 
 
 # Part 1
@@ -109,7 +108,7 @@ nbits    = len(numbers[0])
 # Q: What is the power consumption of the submarine?
 # A: 1869 gamma * 2226 epsilon = 4160394
 
-numbers = list( lines(filename, str2vec) )
+nbits   = len(numbers[0])
 gamma   = vec2int( colsum(numbers) )
 epsilon = ~gamma & (2**nbits - 1)
 
