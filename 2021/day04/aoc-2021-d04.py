@@ -38,7 +38,7 @@ def score (board, draw):
 
 
 def winner (board):
-    """Indicates whether or not this bing `board` is a winner."""
+    """Indicates whether or not this bingo `board` is a winner."""
     done = lambda squares: all(s == 'x' for s in squares)
     return any(done(row) or done(col) for row, col in zip(board, zip(*board)))
 
