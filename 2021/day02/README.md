@@ -107,8 +107,51 @@ Both parts of this puzzle are complete! They provide two gold stars:
 
 ### Notes
 
+#### Python
+
 To run:
 
     $ ./aoc-2021-d02.py
     Part 1: 1925 pos *    879 depth =    1692075
+    Part 2: 1925 pos * 908844 depth = 1749524700
+
+#### Forth
+
+The input to this problem is particularly ammenable to Forth and as
+luck would have it, I've been learning the language!  Although Forth is
+postfix, the ability to consume tokens from the input stream makes it
+easy to change to prefix or infix notation.  That is, it would be
+more Forth-like if the input were formatted as:
+
+    5 forward
+    5 down
+    8 forward
+    3 up
+    8 down
+    2 forward
+
+Instead of:
+
+    forward 5
+    down 5
+    forward 8
+    up 3
+    down 8
+    forward 2
+
+But, again, it's not a problem.  Even in my limited experience, I've
+observed Forth is sometimes prefix (see for example `VARIABLE Foo`, but
+perhaps that's out of necessity since for `Foo VARIABLE`, the
+interpreter / compiler would not recognize the word `Foo`.)
+
+Essentially, the Forth solution defines a Domain Specific Language (DSL)
+that exactly matches the problem input.  No command parsing or
+conditionals are required!  (Quickly and easily creating custom DSLs is
+one of the selling points of Forth.)
+
+To run:
+
+    $ ./aoc-2021-d02.fs
+    Part 1: 1925 pos * 879 depth = 1692075
+    redefined forward  redefined down  redefined up
     Part 2: 1925 pos * 908844 depth = 1749524700
