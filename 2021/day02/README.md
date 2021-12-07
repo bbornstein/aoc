@@ -117,7 +117,7 @@ To run:
 
 #### Forth
 
-The input to this problem is particularly ammenable to Forth and as
+The input to this problem is particularly amenable to Forth and as
 luck would have it, I've been learning the language!  Although Forth is
 postfix, the ability to consume tokens from the input stream makes it
 easy to change to prefix or infix notation.  That is, it would be
