@@ -69,7 +69,7 @@ def rating (numbers, criteria):
             break
         else:
             keeper  = criteria(most_common)
-            indices = [ n for n in indices if numbers[n][pos] == keeper]
+            indices = [ n for n in indices if numbers[n][pos] == keeper ]
 
     return value
 
