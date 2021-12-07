@@ -131,5 +131,5 @@ Both parts of this puzzle are complete! They provide two gold stars:
 To run:
 
     $ ./aoc-2021-d01.py
-    1715 measurements are larger than the previous measurement.
-    1739 sums are larger than the previous sum.
+    Part 1: 1715 measurements are larger than the previous measurement.
+    Part 2: 1739 sums are larger than the previous sum.

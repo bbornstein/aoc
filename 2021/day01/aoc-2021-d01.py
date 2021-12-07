@@ -32,8 +32,8 @@ depths   = list( lines(filename, int) )
 # Q: How many measurements are larger than the previous measurement?
 # A: 1715 measurements are larger than the previous measurement.
 
-larger = sum( w[1] > w[0] for w in windows(depths, size=2) )
-print(f'{larger} measurements are larger than the previous measurement.')
+count = sum( w[1] > w[0] for w in windows(depths, size=2) )
+print(f'Part 1: {count} measurements are larger than the previous measurement.')
 
 
 # Part 2
@@ -41,6 +41,6 @@ print(f'{larger} measurements are larger than the previous measurement.')
 # Q: How many sums are larger than the previous sum?
 # A:
 
-sums   = [ sum(w) for w in windows(depths, size=3) ]
-larger = sum( w[1] > w[0] for w in windows(sums, size=2) )
-print(f'{larger} sums are larger than the previous sum.')
+sums  = [ sum(w) for w in windows(depths, size=3) ]
+count = sum( w[1] > w[0] for w in windows(sums, size=2) )
+print(f'Part 2: {count} sums are larger than the previous sum.')
