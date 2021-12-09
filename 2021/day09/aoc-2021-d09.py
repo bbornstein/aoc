@@ -60,7 +60,7 @@ for row, col in itertools.product( range(nrows), range(ncols) ):
     adjacent = neighbors(row, col, nrows, ncols)
 
     if all(current < heights[r][c] for r, c in adjacent):
-        locations.append((row, col))
+        locations.append( (row, col) )
 
 risk = sum(heights[row][col] + 1 for row, col in locations)
 print(f'Part 1: Risk    = {risk:7}')
