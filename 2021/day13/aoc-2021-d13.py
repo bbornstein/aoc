@@ -4,7 +4,6 @@
 # Author: Ben Bornstein
 
 
-import collections
 import itertools
 
 
@@ -35,16 +34,16 @@ def fold (paper, along, line, nrows, ncols):
         size   = line, ncols
 
     for coord in coords:
-        if paper[coord]:
-            paper[folded(*coord)] = True
-            del paper[coord]
+        if coord in paper:
+            paper.add(folded(*coord))
+            paper.remove(coord)
 
     return size
 
 
 def load (filename):
     """Loads and returns `(paper, folds)` from `filename`."""
-    paper = collections.defaultdict(bool)
+    paper = set()
     folds = None
 
     with open(filename) as stream:
@@ -57,7 +56,7 @@ def load (filename):
 
             if folds is None:
                 x, y = map(int, line.split(','))
-                paper[(x, y)] = True
+                paper.add((x, y))
             else:
                 along, value = line.split('=')
                 folds.append( (along[-1].upper(), int(value)) )
@@ -74,15 +73,15 @@ def pretty (paper, nrows, ncols, num_letters=8):
     for y in range(nrows):
         for char_start in range(0, ncols, char_width):
             for x in range(char_start, char_start + char_width):
-                print('#' if paper[(x, y)] else ' ', end='')
+                print('#' if (x, y) in paper else ' ', end='')
             print('   ', end='')
         print()
 
 
 def size (paper):
     """Returns the size of `paper` as `(nrows, ncols)`."""
-    nrows = max(y for _, y in paper.keys()) + 1
-    ncols = max(x for x, _ in paper.keys()) + 1
+    nrows = max(y for _, y in paper) + 1
+    ncols = max(x for x, _ in paper) + 1
     return nrows, ncols
 
 
@@ -100,7 +99,7 @@ nrows, ncols = size(paper)
 along, line  = folds[0]
 nrows, ncols = fold(paper, along, line, nrows, ncols)
 
-print(f'Part 1: Count = {sum( paper.values() )}')
+print(f'Part 1: Count = {len(paper)}')
 
 
 # Part 2
