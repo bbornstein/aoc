@@ -7,6 +7,20 @@
 import collections
 
 
+def allowed_once (cave, visited):
+    """Only allows small caves to be visited once.  Returns False if `cave`
+    is small and already in `visited`.
+    """
+    return big(cave) or (small(cave) and cave not in visited)
+
+
+def allowed_twice (cave, visited):
+    """Only allows a single small cave to be visited twice.  Returns False
+    if `cave` is small and any small cave is already in `visited` twice.
+    """
+    return big(cave) or (cave not in visited or (not twice(visited)))
+
+
 def big (cave):
     """Indicates whether or not `cave` is big."""
     return cave.isupper()
@@ -81,20 +95,6 @@ def twice (visited):
     return any(visited.count(cave) == 2 for cave in visited if small(cave))
 
 
-def visit_once (cave, visited):
-    """Only allows small caves to be visited once.  Returns False if `cave`
-    is small and already in `visited`.
-    """
-    return big(cave) or (small(cave) and cave not in visited)
-
-
-def visit_twice (cave, visited):
-    """Only allows a single small cave to be visited twice.  Returns False
-    if `cave` is small and any small cave is already in `visited` twice.
-    """
-    return big(cave) or (cave not in visited or (not twice(visited)))
-
-
 filename = 'aoc-2021-d12.txt'
 caves    = load(filename)
 
@@ -104,7 +104,7 @@ caves    = load(filename)
 # Q: How many paths ... that visit small caves at most once?
 # A: Paths = 5212
 
-print(f'Part 1: Paths = {paths(caves, visit_once):6}')
+print(f'Part 1: Paths = {paths(caves, allowed_once):6}')
 
 
 # Part 2
@@ -112,4 +112,4 @@ print(f'Part 1: Paths = {paths(caves, visit_once):6}')
 # Q: How many paths ... that visit once small cave at most twice?
 # A:
 
-print(f'Part 2: Paths = {paths(caves, visit_twice)}')
+print(f'Part 2: Paths = {paths(caves, allowed_twice)}')
