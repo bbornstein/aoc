@@ -56,14 +56,14 @@ with `1` energy in this situation:
     19191
     19991
     11111
-    
+
     After step 1:
     34543
     40004
     50005
     40004
     34543
-    
+
     After step 2:
     45654
     51115
@@ -86,7 +86,7 @@ Here is how the larger example above progresses:
     6882881134
     4846848554
     5283751526
-    
+
     After step 1:
     6594254334
     3856965822
@@ -98,7 +98,7 @@ Here is how the larger example above progresses:
     7993992245
     5957959665
     6394862637
-    
+
     After step 2:
     8807476555
     5089087054
@@ -110,7 +110,7 @@ Here is how the larger example above progresses:
     0000007456
     9000000876
     8700006848
-    
+
     After step 3:
     0050900866
     8500800575
@@ -122,7 +122,7 @@ Here is how the larger example above progresses:
     2211130000
     0421125000
     0021119000
-    
+
     After step 4:
     2263031977
     0923031697
@@ -134,7 +134,7 @@ Here is how the larger example above progresses:
     5532241122
     1532247211
     1132230211
-    
+
     After step 5:
     4484144000
     2044144000
@@ -146,7 +146,7 @@ Here is how the larger example above progresses:
     6643352233
     2643358322
     2243341322
-    
+
     After step 6:
     5595255111
     3155255222
@@ -158,7 +158,7 @@ Here is how the larger example above progresses:
     7754463344
     3754469433
     3354452433
-    
+
     After step 7:
     6707366222
     4377366333
@@ -170,7 +170,7 @@ Here is how the larger example above progresses:
     8865585555
     4865580644
     4465574644
-    
+
     After step 8:
     7818477333
     5488477444
@@ -182,7 +182,7 @@ Here is how the larger example above progresses:
     0000009666
     8000004755
     6800007755
-    
+
     After step 9:
     9060000644
     7800000976
@@ -194,7 +194,7 @@ Here is how the larger example above progresses:
     2221130009
     9111128097
     7911119976
-    
+
     After step 10:
     0481112976
     0031112009
@@ -221,7 +221,7 @@ forwarding, here is the same configuration every 10 steps:
     0000000344
     6000000364
     4600009543
-    
+
     After step 30:
     0643334118
     4253334611
@@ -233,7 +233,7 @@ forwarding, here is the same configuration every 10 steps:
     5544458511
     9444447111
     7944446119
-    
+
     After step 40:
     6211111981
     0421111119
@@ -245,7 +245,7 @@ forwarding, here is the same configuration every 10 steps:
     3322234597
     2222222976
     2222222762
-    
+
     After step 50:
     9655556447
     4865556805
@@ -257,7 +257,7 @@ forwarding, here is the same configuration every 10 steps:
     8000000533
     6800000633
     5680000538
-    
+
     After step 60:
     2533334200
     2743334640
@@ -269,7 +269,7 @@ forwarding, here is the same configuration every 10 steps:
     1854458611
     1175447111
     1115446111
-    
+
     After step 70:
     8211111164
     0421111166
@@ -281,7 +281,7 @@ forwarding, here is the same configuration every 10 steps:
     7322235117
     5722223475
     4572222754
-    
+
     After step 80:
     1755555697
     5965555609
@@ -293,7 +293,7 @@ forwarding, here is the same configuration every 10 steps:
     0000000990
     0000000800
     0000000000
-    
+
     After step 90:
     7433333522
     2643333522
@@ -305,7 +305,7 @@ forwarding, here is the same configuration every 10 steps:
     4854458333
     3387779333
     3333333333
-    
+
     After step 100:
     0397666866
     0749766918
@@ -346,7 +346,7 @@ simultaneously is step `**195**`:
     7777777777
     7777777777
     7777777777
-    
+
     After step 194:
     6988888888
     9988888888
@@ -358,7 +358,7 @@ simultaneously is step `**195**`:
     8888888888
     8888888888
     8888888888
-    
+
     After step 195:
     0000000000
     0000000000
@@ -380,3 +380,11 @@ Your puzzle answer was `290`.
 Both parts of this puzzle are complete! They provide two gold stars:
 **
 
+
+### Notes
+
+To run:
+
+    $ ./aoc-2021-d11.py
+    Part 1: Total Flashes  = 1732
+    Part 2: All Flash Step =  290
