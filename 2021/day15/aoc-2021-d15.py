@@ -77,7 +77,7 @@ class RiskMap:
 
     def neighbors (self, pos):
         """Iterable 4-neighbors (up, down, left, right) for `pos`ition."""
-        deltas   = (-1, 0), (1, 0), (0, -1), (0, 1)
+        deltas   = (0, -1), (0, 1), (-1, 0), (1, 0)
         adjacent = ( pos + Point(*delta) for delta in deltas )
         yield from ( p for p in adjacent if self.valid(p)    )
 
@@ -123,7 +123,7 @@ def search (rmap, start, end):
 filename = 'aoc-2021-d15.txt'
 rmap     = RiskMap.load(filename)
 start    = Point(0, 0)
-end      = Point(rmap.nrows - 1, rmap.ncols - 1)
+end      = Point(rmap.ncols - 1, rmap.nrows - 1)
 
 
 # Part 1
@@ -140,6 +140,6 @@ print(f'Part 1: Total Risk = {search(rmap, start, end):4}')
 # A: Total Risk = 3016
 
 rmap.resize(factor=5)
-end = Point(rmap.nrows - 1, rmap.ncols - 1)
+end = Point(rmap.ncols - 1, rmap.nrows - 1)
 
 print(f'Part 2: Total Risk = {search(rmap, start, end)}')
