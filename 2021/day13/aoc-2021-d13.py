@@ -71,7 +71,7 @@ def pretty (paper, nrows, ncols, num_letters=8):
     char_width = ncols // num_letters
 
     for y in range(nrows):
-        for char_start in range(0, ncols, char_width):
+        for char_start in range(0, ncols, max(1, char_width)):
             for x in range(char_start, char_start + char_width):
                 print('#' if (x, y) in paper else ' ', end='')
             print('   ', end='')
