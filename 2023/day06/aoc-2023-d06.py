@@ -21,7 +21,7 @@ with open(filename) as stream:
 # Part 1
 #
 # Q: What do you get if you multiply these numbers together?
-# A: Part 1: Multiply race ways: 1731600.
+# A: Part 1: Product of wins: 1731600.
 
 answer = math.prod( ways(t, d) for t, d in zip(times, distances) )
 print(f'Part 1: Product of wins: {answer:>8}.')
@@ -35,6 +35,6 @@ with open(filename) as stream:
 # Part 2
 #
 # Q: How many ways can you beat the record in this one much longer race?
-# A: Part 2: Record beating ways: 40087680.
+# A: Part 2: Number of wins: 40087680.
 
 print(f'Part 2: Number  of wins: {ways(time, distance):>8}.')
