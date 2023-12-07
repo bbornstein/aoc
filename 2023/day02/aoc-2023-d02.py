@@ -5,12 +5,20 @@
 
 
 import collections
+import math
 
 
-Cubes      = collections.namedtuple('Cubes', 'red green blue', defaults=3 * [0])
-Cubes.make = lambda s: Cubes(
-    **{ color: int(n) for n, color in [cubes.split() for cubes in s.split(',')] }
-)
+class Cubes (collections.namedtuple('Cubes', 'red green blue', defaults=3*[0])):
+    __slots__ = ()
+
+    @staticmethod
+    def make (desc):
+        """Makes a new `Cubes` set from a string `desc`.  For example:
+
+            Cubes.make('3 blue, 4 red') => Cubes(red=4, green=0, blue=3)
+        """
+        pairs = [ cubes.split() for cubes in desc.split(',') ]
+        return Cubes(**{ color: int(n) for n, color in pairs })
 
 
 def game (line):
@@ -35,9 +43,7 @@ def possible (cubes, red=12, green=13, blue=14):
 
 def power (sets):
     """Returns the power of the minimum set of cubes in game `sets`."""
-    return ( max(cubes.red   for cubes in sets) *
-             max(cubes.green for cubes in sets) *
-             max(cubes.blue  for cubes in sets) )
+    return math.prod([ max(color) for color in zip(*sets) ])
 
 
 filename = 'aoc-2023-d02.txt'
