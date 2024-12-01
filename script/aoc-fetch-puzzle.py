@@ -189,7 +189,7 @@ def main ():
     """Downloads Advent of Code Puzzle for the given year and day."""
     p = argparse.ArgumentParser(description=main.__doc__)
     p.add_argument('day'   , type=int)
-    p.add_argument('--year', type=int, default='2023')
+    p.add_argument('--year', type=int, default='2024')
     p.add_argument('-p', '--puzzle', type=str, metavar='filename', default='README.md')
     p.add_argument('-d', '--puzzle-data', type=str, metavar='filename')
 
